@@ -13,7 +13,7 @@ Feddle (federation extension for Flarum) aims to integrate participating Flarum 
 Proper installation instructions pending, probably until a proper alpha release (which this is not). If you're trying to install Feddle at this point that means you're a developer and I have confidence in your ability to make it work.
 
 Excerpt from my &lt;flarum-directory&gt;/composer.json:
-``` json
+```
 {
     ...
     "require" : {
