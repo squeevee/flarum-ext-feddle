@@ -1,0 +1,27 @@
+{
+    "name": "squeevee/flarum-ext-feddle",
+    "description": "(Experimental) Fediverse integration for Flarum: joins your forum to a growing network of federated social media platforms including Mastodon, Plemora, and Friendica.",
+    "type": "flarum-extension",
+    "extra":{
+        "flarum-extension": {
+            "title": "Feddle",
+            "icon": {
+                "image": "icon.svg",
+                "backgroundColor": "#FFFFFF"
+            }
+        }
+    },
+    "require": {
+        "flarum/core": "^0.1.0-beta.8",
+        "pterotype/activitypub-php": "@dev"
+    },
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://git.friendi.ca/friendica/php-json-ld.git"
+        }
+    ],
+    "autoload": {
+        "psr-4": {"Squeevee\\Feddle\\": "src/"}
+    }
+}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+                          https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+
+    <entity name="ActivityPub\Entities\Field" table="feddle_activitypub_fields">
+        <id name="id" type="integer">
+            <generator strategy="AUTO"/>
+        </id>
+
+        <many-to-one field="object" target-entity="ActivityPubObject" inversed-by="fields"/>
+
+        <field name="name" type="string"/>
+        <field name="value" type="string" nullable="true"/>
+
+        <many-to-one field="targetObject" target-entity="ActivityPubObject" inversed-by="referencingFields"/>
+
+    </entity>
+
+</doctrine-mapping>

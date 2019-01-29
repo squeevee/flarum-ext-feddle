@@ -1,0 +1,5 @@
+squeevee-feddle:
+  forum:
+    buttons:
+      federate-discussions: Federate Discussions
+      local-discussions: Local Discussions
