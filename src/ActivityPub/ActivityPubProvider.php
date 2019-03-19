@@ -3,11 +3,12 @@
 namespace Squeevee\Feddle\ActivityPub;
 
 use Flarum\Foundation\AbstractServiceProvider;
+use Illuminate\Contracts\Container\Container;
 
 class ActivityPubProvider extends AbstractServiceProvider
 {
     public function register()
     {
-        $this->app->make(ActivityPubFactory::class);
+        $this->app->singleton(ActivityPubFactory::class);
     }
 }

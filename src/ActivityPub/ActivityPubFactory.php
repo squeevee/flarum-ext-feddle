@@ -4,25 +4,24 @@ namespace Squeevee\Feddle\ActivityPub;
 
 use ActivityPub\ActivityPub;
 use ActivityPub\Config\ActivityPubConfig;
-use Flarum\Foundation\Application;
+use Illuminate\Contracts\Container\Container;
 
 class ActivityPubFactory
 {
-    private $app;
+    private $container;
 
-    public function __construct(Application $app)
+    public function __construct(Container $container)
     {
-        $this->app = $app;
+        $this->container = $container;
     }
 
     public function makeActivityPub()
     {
-        $flarum_config = $this->app->make('flarum.config');
+        $flarum_config = $this->container->make('flarum.config');
         $database_config = $flarum_config['database'];
 
         if ($database_config['driver'] !== 'mysql') {
-            //unsupported
-            return null;
+            throw new Exception('Unsupported database driver');
         }
 
         $ap_config = ActivityPubConfig::createBuilder()
@@ -35,9 +34,10 @@ class ActivityPubFactory
                 'dbname' => $database_config['database']
             ))
             ->setIsDevMode($flarum_config['debug'])
-            ->setMetadataMappings(array(
+            /*->setMetadataMappings(array(
                 __DIR__ . '/../../resources/orm_mappings'
-            ))
+            ))*/
+            ->setDbPrefix($database_config['prefix'] . 'feddle_')
             ->build();
         
         return new ActivityPub( $ap_config );

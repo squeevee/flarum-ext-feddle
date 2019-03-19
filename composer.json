@@ -1,6 +1,6 @@
 {
     "name": "squeevee/flarum-ext-feddle",
-    "description": "(Experimental) Fediverse integration for Flarum: joins your forum to a growing network of federated social media platforms including Mastodon, Plemora, and Friendica.",
+    "description": "(WARNING: Experimental, please back up your data before activating) Fediverse integration for Flarum: joins your forum to a growing network of federated social media platforms including Mastodon, Pleroma, and Friendica.",
     "type": "flarum-extension",
     "extra":{
         "flarum-extension": {

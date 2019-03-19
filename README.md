@@ -1,6 +1,6 @@
 # Feddle
 
-(Experimental) Fediverse integration for Flarum: joins your forum to a growing network of federated social media platforms including Mastodon, Plemora, and Friendica.
+(Experimental) Fediverse integration for Flarum: joins your forum to a growing network of federated social media platforms including Mastodon, Pleroma, and Friendica.
 
 ## Overview
 
